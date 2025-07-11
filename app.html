@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Database</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <header>
+        <h1>User Database</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Welcome to the User Database</h2>
+            <p>This application allows you to register, login, and manage user data.</p>
+        </section>
+
+        <section>
+            <h3>Let's Get Started</h3>
+            <p>Please register a new user or login if you already have an account.</p> <!-- Register new user Form -->
+        </section>
+        <section>
+        <form id="registerForm" action="/register" method="POST">
+            <h3>Register</h3>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <br>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <br>
+            <label for="email">Email Address:</label>
+            <input type="text" id="email" name="email" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Register</button>
+        </form>
+        </section>
+        <h3>OR</h3>
+        <section>
+        <form  id="loginForm" action="/login" method="POST"> <!-- User Login Form -->
+            <h3>Login</h3>
+            <label for="email">Email Address:</label>
+            <input type="text" id="email" name="email" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+        </section>
+        <h3>OR</h3>
+        <section>
+            <form id="deleteForm" action="/delete" method="POST"> <!-- User Deletion Form -->
+                <h3>Delete User</h3>
+                <label for="email">Email Address:</label>
+                <input type="text" id="email" name="email" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <button type="submit">Delete User</button>
+            </form>
+        </section>
+        <h3>OR</h3>
+        <section>
+            <form id="blogForm" action="/api/blogs" method="POST">
+                <h3>Make a new Blog Post</h3>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <br>
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" required></textarea>
+                <br>
+                <button type="submit">Create Blog Post</button>
+            </form>
+        </section>
+        <h3>OR</h3>
+        <section>
+            <form id="viewBlogsForm" action="/api/blogs" method="GET">
+            <h3>View All Blogs</h3>
+            <button id="viewBlogsButton">View Blogs</button>
+            </form>
+        </section>
+        <h3>OR</h3>
+        <section>
+            <form id="deleteBlog" action="/api/blogs/delete" method="DELETE">
+                <h3>Delete a Blog Post</h3>
+                <label for="blogId">Blog ID:</label>
+                <input type="text" id="blogId" name="blogId" required>
+                <br>
+                <label for="loginEmail">Email Address:</label>
+                <input type="text" id="loginEmail" name="loginEmail" required>
+                <br>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="loginPassword" required>
+                <br>
+                <button type="submit">Delete Blog Post</button>
+            </form>
+        </section>
+        <h3>OR</h3>
+        <section>
+            <form id="deleteAllBlogsForm" action="/api/blogs/deleteAll" method="DELETE">
+                <h3>Delete all Blog Posts</h3>
+                <label for="loginEmail">Email Address:</label>
+                <input type="text" id="loginEmail" name="loginEmail" required>
+                <br>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="loginPassword" required>
+                <br>
+                <button type="submit">Delete All Blog Posts</button>
+            </form>
+        </section>
+            
+    </main>
+    <script src="app.js"></script>
+    <footer>
+        <p>&copy; Designed by Zach Goodman for Class 34 of SDB_April_2025</p>
+</body>
+</html>
